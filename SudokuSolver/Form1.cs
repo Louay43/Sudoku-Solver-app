@@ -151,7 +151,6 @@ namespace SudokuSolver
                 }
             }
 
-            
             return puzzle;
         }
 

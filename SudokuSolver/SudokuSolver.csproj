@@ -12,10 +12,14 @@
 
   <ItemGroup>
     <None Remove="logo.ico" />
+    <None Remove="sudoku.dll" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sudoku.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
