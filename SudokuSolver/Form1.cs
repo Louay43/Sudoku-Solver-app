@@ -39,6 +39,7 @@ namespace SudokuSolver
                         ctrl.Text = puzzle[row, col] == 0 ? "" : puzzle[row, col].ToString();   //if 0 leave empty
                         ctrl.ForeColor = Color.Black;
                         ctrl.BackColor = Color.White;
+                        ctrl.ReadOnly = false;  //make sure all textboxes are editable
                     }
                 }
             }
@@ -113,7 +114,7 @@ namespace SudokuSolver
             LoadPuzzle(samplePuzzle);   //load the sample puzzle into the grid
 
         }
-
+        
         private void btnSolve_Click(object sender, EventArgs e)
         {
             int[,] puzzle = ReadGrid();       //first off, get the current grid values as a 2D array    
@@ -153,7 +154,7 @@ namespace SudokuSolver
             return puzzle;
         }
 
-
+        
         private void WriteGrid(int[,] solved)
         {
             for (int row = 0; row < 9; row++)
@@ -170,7 +171,7 @@ namespace SudokuSolver
                         if (!isUserInput[row, col] && solved[row, col] != 0)
                         {
                             // Solver-generated
-                            ctrl.ReadOnly = true;
+                            ctrl.ReadOnly = false;
                             ctrl.ForeColor = Color.DarkBlue;
                             ctrl.BackColor = Color.FromArgb(220, 230, 250); // soft blue
                             ctrl.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
